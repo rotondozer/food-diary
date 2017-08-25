@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://food-diary-api.herokuapp.com/'
+    production: 'https://food-diary-api.herokuapp.com'
   }
 }
 
