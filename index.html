@@ -22,18 +22,37 @@
       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
       est laborum.</p>
 
+<!-- Sign Up -->
+      <form id="sign-up">
+        <div class="form-group">
+          <label for="">Username</label>
+          <input type="text" name="credentials[email]" value="" placeholder="Email" class="form-control"><br>
+          <label for="">Password</label>
+          <input type="password" name="credentials[password]" value="" placeholder="Password" class="form-control">
+          <input type="password" name="credentials[password_confirmation]" value="" placeholder="Confirm Password" class="form-control"><br>
+          <button type="submit" class="btn btn-primary" name="button">Sign Up</button>
+        </div>
+    </form>
 
-<form>
-  <div class="form-group">
-    <label for="formGroupExampleInput">Example label</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
-  </div>
-  <div class="form-group">
-    <label for="formGroupExampleInput2">Another label</label>
-    <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-  </div>
-  <button type="submit" class="btn btn-primary" name="button">Submit</button>
-</form>
+<!-- Sign In -->
+    <form id="sign-in">
+      <div class="form-group">
+        <input type="text" class="form-control" name="credentials[email]" value="" placeholder="Email">
+        <input type="password" class="form-control" name="credentials[password]" value="" placeholder="Password">
+        <button type="submit" class="btn btn-default">Login</button>
+      </div>
+    </form>
 
-    </body>
+<!-- Sign Out -->
+    <form id="sign-out">
+      <button type="submit" class="btn btn-danger">Sign Out</button>
+    </form>
+
+  </body>
 </html>
+
+<!--
+<button type="submit" class="btn btn-primary" name="button">Sign Up</button>
+<button type="submit" class="btn btn-info" name="button">Sign In</button>
+<button type="submit" class="btn btn-danger" name="button">Sign Out</button>
+-->
