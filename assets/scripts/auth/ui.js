@@ -24,12 +24,14 @@ const changePasswordSuccess = () => {
 
 const getDateMastersSuccess = (data) => {
   console.log('getDateMastersSuccess in ui.js')
-  console.log(data.date_masters)
+  console.log(data)
+  console.table(data.date_masters)
 }
 
 const getFoodLogsSuccess = (data) => {
   console.log('getFoodLogsSuccess in ui.js')
-  console.log(data.food_logs)
+  console.log(data)
+  console.table(data.food_logs)
   // for (let i = 0; i < data.food_logs.length; i++) {
   //   $('#games-content').append('<div>Game ID:' + data.games[i].id + '</div>')
   //   $('#games-content').append('<div>Game STATE:' + data.games[i].cells + '</div>')

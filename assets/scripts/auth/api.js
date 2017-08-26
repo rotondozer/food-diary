@@ -56,7 +56,7 @@ const getDateMasters = function (data) {
 
 const getFoodLogs = function (data) {
   console.log('getFoodLogs')
-  console.log(data) // undefined
+  console.log(data)
   return $.ajax({
     method: 'GET',
     url: app.host + '/food_logs/' + app.user.id,
