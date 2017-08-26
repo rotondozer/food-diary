@@ -38,6 +38,14 @@ const onChangePassword = function (event) {
     .fail(ui.fail)
 }
 
+const onGetDateMasters = function (event) {
+  event.preventDefault()
+  console.log('onGetDateMasters in events.js')
+  api.getDateMasters()
+    .then(ui.getDateMastersSuccess)
+    .catch(ui.fail)
+}
+
 const onGetFoodLogs = function (event) {
   event.preventDefault()
   console.log('onGetFoodLogs in events.js')
@@ -52,6 +60,7 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
   $('#get-all-food-logs').on('click', onGetFoodLogs)
+  $('#get-all-date-masters').on('click', onGetDateMasters)
 }
 
 module.exports = {

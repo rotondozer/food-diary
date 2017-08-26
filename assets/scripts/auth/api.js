@@ -43,10 +43,23 @@ const changePassword = function (data) {
   })
 }
 
-const getFoodLogs = function () {
+const getDateMasters = function (data) {
+  console.log('getDateMasters in api.js')
   return $.ajax({
     method: 'GET',
-    url: app.host + '/food_logs',
+    url: app.host + '/date_masters/' + app.user.id,
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
+const getFoodLogs = function (data) {
+  console.log('getFoodLogs')
+  console.log(data) // undefined
+  return $.ajax({
+    method: 'GET',
+    url: app.host + '/food_logs/' + app.user.id,
     headers: {
       Authorization: 'Token token=' + app.user.token
     }
@@ -59,5 +72,6 @@ module.exports = {
   signOut,
   changePassword,
   getFoodLogs,
+  getDateMasters,
   getFormFields
 }
