@@ -38,11 +38,20 @@ const onChangePassword = function (event) {
     .fail(ui.fail)
 }
 
+const onGetFoodLogs = function (event) {
+  event.preventDefault()
+  console.log('onGetFoodLogs in events.js')
+  api.getFoodLogs()
+    .then(ui.getFoodLogsSuccess)
+    .catch(ui.fail)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
+  $('#get-all-food-logs').on('click', onGetFoodLogs)
 }
 
 module.exports = {

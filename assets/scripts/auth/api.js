@@ -43,10 +43,21 @@ const changePassword = function (data) {
   })
 }
 
+const getFoodLogs = function () {
+  return $.ajax({
+    method: 'GET',
+    url: app.host + '/food_logs',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
+  getFoodLogs,
   getFormFields
 }

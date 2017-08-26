@@ -21,7 +21,9 @@ const signOutSuccess = () => {
 const changePasswordSuccess = () => {
   console.log('Password Successfully Changed.')
 }
-
+const getFoodLogsSuccess = (data) => {
+  console.log('getFoodLogsSuccess in ui.js')
+}
 // I made this
 const signUpSuccess = (data) => {
   console.log(data)
@@ -41,5 +43,6 @@ module.exports = {
   signInSuccess,
   signOutSuccess,
   changePasswordSuccess,
+  getFoodLogsSuccess,
   signUpSuccess
 }
