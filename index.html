@@ -56,11 +56,11 @@
     <form id="get-all-date-masters">
       <button type="submit" class="btn btn-success">Get All Dates Logged By User</button>
     </form>
-    <!-- Date Input Field -->
-    <form id="get-food-by-date">
+    <!-- Date Input Filter food logs -->
+    <form id="get-food-by-date" action="/date_masters" method="get">
       <div class="form-group">
         <label for="">Date</label>
-        <input type="text" name="credentials[date]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
+        <input type="text" name="date_master[date]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
         <button type="submit" class="btn btn-info" name="button">Get Food Logs</button>
       </div>
     </form>

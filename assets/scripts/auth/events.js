@@ -66,7 +66,7 @@ const onGetFoodLogs = function (event) {
 const onGetFlByDate = function (event) {
   event.preventDefault()
   // Get input 'yyyy-mm-dd'
-  const dateFilter = $("input[name='credentials[date]']").val()
+  const dateFilter = $("input[name='date_master[date]']").val()
 
   console.log('dateFilter === ' + dateFilter)
   console.log('onGetFlByDate in events.js')

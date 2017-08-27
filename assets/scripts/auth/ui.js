@@ -36,15 +36,30 @@ const getFoodLogsSuccess = (data) => {
   console.log('getFoodLogsSuccess in ui.js')
   console.log(data)
   console.table(data.food_logs)
-  for (let i = 0; i < data.food_logs.length; i++) {
-    $('.food-description').append('<div>Description: ' + data.food_logs[i].description + '</div>')
-    $('.food-time').append('<div>Time: ' + data.food_logs[i].time + '</div>')
-    $('.food-date').append('<div>Date: ' + data.food_logs[i].date_master.date + '</div>')
+  if (data.food_logs.length > 0) {
+    for (let i = 0; i < data.food_logs.length; i++) {
+      $('.food-description').append('<div>Description: ' + data.food_logs[i].description + '</div>')
+      $('.food-time').append('<div>Time: ' + data.food_logs[i].time + '</div>')
+      $('.food-date').append('<div>Date: ' + data.food_logs[i].date_master.date + '</div>')
+    }
+  } else {
+    $('.food-description').append('<div>Looks like you haven\'t made any logs yet</div>')
   }
 }
 
 const getFlByDateSuccess = (data) => {
+  console.log(data.food_logs)
+  const foodLogs = data.food_logs
   console.log('getFlByDateSuccess')
+  if (foodLogs.length > 0) {
+    for (let i = 0; i < foodLogs.length; i++) {
+      $('.food-description').append('<div>Description: ' + foodLogs[i].description + '</div>')
+      $('.food-time').append('<div>Time: ' + foodLogs[i].time + '</div>')
+      $('.food-date').append('<div>Date: ' + foodLogs[i].date_master.date + '</div>')
+    }
+  } else {
+    $('.food-description').append('<div>Looks like you haven\'t made any logs yet</div>')
+  }
 }
 
 const signUpSuccess = (data) => {
