@@ -86,12 +86,10 @@ const getFlByDate = function (data) {
   return $.ajax({
     method: 'GET',
     // url: /date_masters/:date_master_id/food_logs(.:format)
-    url: app.host + '/food_logs/' + app.user.id + '/date_masters/' + data,
+    url: app.host + '/users/' + app.user.id + '/date_masters/' + data + '/food_logs',
     headers: {
       Authorization: 'Token token=' + app.user.token
-    },
-    // 'yyyy-mm-dd'
-    data
+    }
   })
 }
 
