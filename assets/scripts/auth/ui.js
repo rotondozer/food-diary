@@ -1,25 +1,29 @@
 'use strict'
-// remove signIn and signOut
+
 const app = require('../app.js')
 
-// remove me before code-along
 const signInSuccess = (data) => {
   app.user = data.user
   console.log(app)
   console.log('sign in success!')
-  $('#signedInUser').text(data.user.email)
+  // $('#signedInUser').text(data.user.email)
 }
 
-// remove me before code-along
 const signOutSuccess = () => {
   app.user = null
   console.log(app)
   console.log('signed out')
-  $('#signedInUser').text('')
+  // $('#signedInUser').text('')
 }
 
 const changePasswordSuccess = () => {
   console.log('Password Successfully Changed.')
+}
+
+const onCreateDateSuccess = (data) => {
+  console.log(data.date_master)
+  app.date_master = data.date_master
+  app.date_master.id = data.date_master.id
 }
 
 const getDateMastersSuccess = (data) => {
@@ -32,12 +36,17 @@ const getFoodLogsSuccess = (data) => {
   console.log('getFoodLogsSuccess in ui.js')
   console.log(data)
   console.table(data.food_logs)
-  // for (let i = 0; i < data.food_logs.length; i++) {
-  //   $('#games-content').append('<div>Game ID:' + data.games[i].id + '</div>')
-  //   $('#games-content').append('<div>Game STATE:' + data.games[i].cells + '</div>')
-  // }
+  for (let i = 0; i < data.food_logs.length; i++) {
+    $('.food-description').append('<div>Description: ' + data.food_logs[i].description + '</div>')
+    $('.food-time').append('<div>Time: ' + data.food_logs[i].time + '</div>')
+    $('.food-date').append('<div>Date: ' + data.food_logs[i].date_master.date + '</div>')
+  }
 }
-// I made this
+
+const getFlByDateSuccess = (data) => {
+  console.log('getFlByDateSuccess')
+}
+
 const signUpSuccess = (data) => {
   console.log(data)
 }
@@ -58,5 +67,7 @@ module.exports = {
   changePasswordSuccess,
   getFoodLogsSuccess,
   getDateMastersSuccess,
-  signUpSuccess
+  getFlByDateSuccess,
+  signUpSuccess,
+  onCreateDateSuccess
 }

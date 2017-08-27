@@ -38,6 +38,15 @@ const onChangePassword = function (event) {
     .fail(ui.fail)
 }
 
+const onCreateDate = function (event) {
+  event.preventDefault()
+  const date = $("input[name='credentials[date-create]']").val()
+  console.log(date)
+  api.createDate(date)
+    .then(ui.onCreateDateSuccess)
+    .catch(ui.fail)
+}
+
 const onGetDateMasters = function (event) {
   event.preventDefault()
   console.log('onGetDateMasters in events.js')
@@ -54,6 +63,19 @@ const onGetFoodLogs = function (event) {
     .catch(ui.fail)
 }
 
+const onGetFlByDate = function (event) {
+  event.preventDefault()
+  // Get input 'yyyy-mm-dd'
+  const dateFilter = $("input[name='credentials[date]']").val()
+
+  console.log('dateFilter === ' + dateFilter)
+  console.log('onGetFlByDate in events.js')
+  // pass input to API call
+  api.getFlByDate(dateFilter)
+    .then(ui.getFlByDateSuccess)
+    .catch(ui.fail)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -61,6 +83,8 @@ const addHandlers = () => {
   $('#change-password').on('submit', onChangePassword)
   $('#get-all-food-logs').on('click', onGetFoodLogs)
   $('#get-all-date-masters').on('click', onGetDateMasters)
+  $('#get-food-by-date').on('submit', onGetFlByDate)
+  $('#create-date').on('submit', onCreateDate)
 }
 
 module.exports = {

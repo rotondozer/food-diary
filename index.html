@@ -56,6 +56,42 @@
     <form id="get-all-date-masters">
       <button type="submit" class="btn btn-success">Get All Dates Logged By User</button>
     </form>
+    <!-- Date Input Field -->
+    <form id="get-food-by-date">
+      <div class="form-group">
+        <label for="">Date</label>
+        <input type="text" name="credentials[date]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
+        <button type="submit" class="btn btn-info" name="button">Get Food Logs</button>
+      </div>
+    </form>
+
+    <!-- Create Date -->
+    <form id="create-date">
+      <div class="form-group">
+        <label for="">Date</label>
+        <input type="text" name="credentials[date-create]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
+        <button type="submit" class="btn btn-danger" name="button">Create Date</button>
+      </div>
+    </form>
+
+    <!-- Food Logs Appending -->
+    <div class="row">
+      <div class="col-xs-4">
+        <div class="food-description"></div>
+      </div>
+      <div class="col-xs-4">
+        <div class="food-time"></div>
+      </div>
+      <div class="col-xs-4">
+        <div class="food-date"></div>
+      </div>
+    </div> <!-- END ROW -->
+
+
+
+    <div class="all-dates-logged">
+
+    </div>
   </body>
 </html>
 

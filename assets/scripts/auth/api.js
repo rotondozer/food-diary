@@ -14,7 +14,6 @@ const signUp = function (data) {
 }
 
 const signIn = function (data) {
-  console.log('data === ' + data)
   return $.ajax({
     url: app.host + '/sign-in/',
     method: 'POST',
@@ -43,6 +42,22 @@ const changePassword = function (data) {
   })
 }
 
+const createDate = function (date) {
+  return $.ajax({
+    url: app.host + '/date_masters',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      'date_master': {
+        'user_id': app.user.id,
+        'date': date
+      }
+    }
+  })
+}
+
 const getDateMasters = function (data) {
   console.log('getDateMasters in api.js')
   return $.ajax({
@@ -66,6 +81,19 @@ const getFoodLogs = function (data) {
   })
 }
 
+const getFlByDate = function (data) {
+  console.log('getFlByDate data === ' + data)
+  return $.ajax({
+    method: 'GET',
+    url: app.host + '/food_logs/' + app.user.id + '/date_masters/' + data,
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    // 'yyyy-mm-dd'
+    data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -73,5 +101,7 @@ module.exports = {
   changePassword,
   getFoodLogs,
   getDateMasters,
-  getFormFields
+  getFlByDate,
+  getFormFields,
+  createDate
 }
