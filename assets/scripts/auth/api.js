@@ -118,6 +118,19 @@ const createFoodLog = function (data) {
   })
 }
 
+const deleteDate = function (data) {
+  console.log(data)
+  const date = data.date_master.date
+  console.log(date)
+  return $.ajax({
+    url: app.host + '/users/' + app.user.id + '/date_masters/' + date,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -129,5 +142,6 @@ module.exports = {
   getFormFields,
   createDate,
   updateDate,
+  deleteDate,
   createFoodLog
 }

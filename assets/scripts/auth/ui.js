@@ -32,6 +32,11 @@ const onUpdateDateSuccess = (data) => {
   console.log(data)
 }
 
+const onDeleteDateSuccess = (data) => {
+  console.log('DELETED date successfully')
+  console.log(data)
+}
+
 const getDateMastersSuccess = (data) => {
   console.log('getDateMastersSuccess in ui.js')
   console.log(data)
@@ -97,5 +102,6 @@ module.exports = {
   signUpSuccess,
   onCreateDateSuccess,
   onUpdateDateSuccess,
+  onDeleteDateSuccess,
   createFoodLogSuccess
 }

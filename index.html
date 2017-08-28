@@ -66,7 +66,7 @@
     </form>
 <!-- Get All Date Logged By User -->
     <form id="get-all-date-masters">
-      <button type="submit" class="btn btn-success">Get All Dates Logged By User</button>
+      <button type="submit" class="btn btn-primary">Get All Dates Logged By User</button>
     </form>
     <!-- Date Input Filter food logs -->
     <form id="get-food-by-date" action="/date_masters" method="get">
@@ -82,7 +82,16 @@
       <div class="form-group">
         <label for="">Date</label>
         <input type="text" name="date_master[date]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
-        <button type="submit" class="btn btn-danger" name="button">Create Date</button>
+        <button type="submit" class="btn btn-success" name="button">Create Date</button>
+      </div>
+    </form>
+
+    <!-- Create Date -->
+    <form id="delete-date">
+      <div class="form-group">
+        <label for="">Date</label>
+        <input type="text" name="date_master[date]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
+        <button type="submit" class="btn btn-danger" name="button">Delete Date</button>
       </div>
     </form>
 

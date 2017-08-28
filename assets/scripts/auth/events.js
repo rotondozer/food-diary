@@ -97,6 +97,14 @@ const onUpdateDate = function (event) {
     .catch(ui.fail)
 }
 
+const onDeleteDate = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.deleteDate(data)
+    .then(ui.onDeleteDateSuccess)
+    .catch(ui.fail)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -108,6 +116,7 @@ const addHandlers = () => {
   $('#create-date').on('submit', onCreateDate)
   $('#create-food-log').on('submit', onCreateFoodLog)
   $('#update-date').on('submit', onUpdateDate)
+  $('#delete-date').on('submit', onDeleteDate)
 }
 
 module.exports = {
