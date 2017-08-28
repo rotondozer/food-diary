@@ -60,6 +60,7 @@ const getFoodLogsSuccess = (data) => {
 
 const getAllergicReactionLogsSuccess = (data) => {
   console.log('getAllergicReactionLogsSuccess in ui.js')
+  console.table(data)
 }
 
 const getFlByDateSuccess = (data) => {
@@ -80,6 +81,11 @@ const getFlByDateSuccess = (data) => {
 const createFoodLogSuccess = (data) => {
   console.log('createFoodLogSuccess in ui.js')
   console.log(data)
+}
+
+const createAllergicReactionLogSuccess = (data) => {
+  console.log('createAllergicReactionLogSuccess in ui.js')
+  console.table(data)
 }
 
 const signUpSuccess = (data) => {
@@ -108,5 +114,6 @@ module.exports = {
   onCreateDateSuccess,
   onUpdateDateSuccess,
   onDeleteDateSuccess,
-  createFoodLogSuccess
+  createFoodLogSuccess,
+  createAllergicReactionLogSuccess
 }

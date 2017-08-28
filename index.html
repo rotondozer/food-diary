@@ -109,7 +109,7 @@
       </div>
     </form>
 
-    <!-- CREATE food_log -->
+<!-- CREATE food_log -->
     <form id="create-food-log" action="/food_logs" method="post">
       <div class="form-group">
         <label for="">Food</label>
@@ -121,6 +121,19 @@
         <button type="submit" class="btn btn-success" name="button">Create Food Log</button>
       </div>
     </form>
+
+  <!-- CREATE allergic reaction log -->
+      <form id="create-allergic-reaction-log" action="/allergic_reaction_logs" method="post">
+        <div class="form-group">
+          <label for="">Symptom</label>
+          <input type="text" name="allergic_reaction_log[description]" value="" placeholder="Description" class="form-control"><br>
+          <label for="">Date</label>
+          <input type="text" name="allergic_reaction_log[date_master_id]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
+          <label for="">Time</label>
+          <input type="text" name="allergic_reaction_log[time]" value="" placeholder="HH:MM" class="form-control"><br>
+          <button type="submit" class="btn btn-success" name="button">Create Allergic Reaction Log</button>
+        </div>
+      </form>
 
     <!-- Food Logs Appending -->
     <div class="row">

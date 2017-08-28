@@ -129,6 +129,21 @@ const createFoodLog = function (data) {
   })
 }
 
+const createAllergicReactionLog = function (data) {
+  console.log('createAllergicReactionLog in api.js')
+  console.log(data.allergic_reaction_log.date_master_id)
+  // date to be converted to date_master_id
+  const date = data.allergic_reaction_log.date_master_id
+  return $.ajax({
+    method: 'POST',
+    url: app.host + '/users/' + app.user.id + '/date_masters/' + date + '/allergic_reaction_logs',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data
+  })
+}
+
 const deleteDate = function (data) {
   console.log(data)
   const date = data.date_master.date
@@ -155,5 +170,6 @@ module.exports = {
   createDate,
   updateDate,
   deleteDate,
-  createFoodLog
+  createFoodLog,
+  createAllergicReactionLog
 }
