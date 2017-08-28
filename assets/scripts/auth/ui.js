@@ -21,9 +21,15 @@ const changePasswordSuccess = () => {
 }
 
 const onCreateDateSuccess = (data) => {
+  // Don't think I need this anymore
   console.log(data.date_master)
   app.date_master = data.date_master
   app.date_master.id = data.date_master.id
+}
+
+const onUpdateDateSuccess = (data) => {
+  console.log('updated date successfully!')
+  console.log(data)
 }
 
 const getDateMastersSuccess = (data) => {
@@ -90,5 +96,6 @@ module.exports = {
   getFlByDateSuccess,
   signUpSuccess,
   onCreateDateSuccess,
+  onUpdateDateSuccess,
   createFoodLogSuccess
 }

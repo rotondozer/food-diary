@@ -87,13 +87,13 @@ const onCreateFoodLog = function (event) {
     .catch(ui.fail)
 }
 
-const onUpdateFoodLogs = function (event) {
+const onUpdateDate = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('onUpdateFoodLogs in events.js')
+  console.log('onUpdateDate in events.js')
   console.log(data)
-  api.updateFoodLog(data)
-    .then(ui.updateFoodLogSuccess)
+  api.updateDate(data)
+    .then(ui.updateDateSuccess)
     .catch(ui.fail)
 }
 
@@ -107,6 +107,7 @@ const addHandlers = () => {
   $('#get-food-by-date').on('submit', onGetFlByDate)
   $('#create-date').on('submit', onCreateDate)
   $('#create-food-log').on('submit', onCreateFoodLog)
+  $('#update-date').on('submit', onUpdateDate)
 }
 
 module.exports = {

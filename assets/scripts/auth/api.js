@@ -54,6 +54,20 @@ const createDate = function (data) {
   })
 }
 
+const updateDate = function (data) {
+  console.log('updateDate in api.js')
+  console.log(data.date_master.date_old)
+  const oldDate = data.date_master.date_old
+  return $.ajax({
+    method: 'PATCH',
+    url: app.host + '/users/' + app.user.id + '/date_masters/' + oldDate,
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: data
+  })
+}
+
 const getDateMasters = function (data) {
   console.log('getDateMasters in api.js')
   return $.ajax({
@@ -114,5 +128,6 @@ module.exports = {
   getFlByDate,
   getFormFields,
   createDate,
+  updateDate,
   createFoodLog
 }

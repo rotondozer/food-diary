@@ -86,6 +86,16 @@
       </div>
     </form>
 
+    <!-- Update Date -->
+    <form id="update-date" action="/date_masters" method="patch">
+      <div class="form-group">
+        <label for="">Date</label>
+        <input type="text" name="date_master[id]" value="" placeholder="YYYY-MM-DD Old Date" class="form-control"><br>
+        <input type="text" name="date_master[date]" value="" placeholder="YYYY-MM-DD New Date" class="form-control"><br>
+        <button type="submit" class="btn btn-info" name="button">Update Date</button>
+      </div>
+    </form>
+
     <!-- CREATE food_log -->
     <form id="create-food-log" action="/food_logs" method="post">
       <div class="form-group">
