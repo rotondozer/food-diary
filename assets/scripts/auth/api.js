@@ -42,19 +42,15 @@ const changePassword = function (data) {
   })
 }
 
-const createDate = function (date) {
+const createDate = function (data) {
+  console.log(data)
   return $.ajax({
-    url: app.host + '/date_masters',
+    url: app.host + '/users/' + app.user.id + '/date_masters',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + app.user.token
     },
-    data: {
-      'date_master': {
-        'user_id': app.user.id,
-        'date': date
-      }
-    }
+    data
   })
 }
 
@@ -93,6 +89,21 @@ const getFlByDate = function (data) {
   })
 }
 
+const createFoodLog = function (data) {
+  console.log('createFoodLog in api.js')
+  console.log(data.food_log.date_master_id)
+  // date to be converted to date_master_id
+  const date = data.food_log.date_master_id
+  return $.ajax({
+    method: 'POST',
+    url: app.host + '/users/' + app.user.id + '/date_masters/' + date + '/food_logs',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -102,5 +113,6 @@ module.exports = {
   getDateMasters,
   getFlByDate,
   getFormFields,
-  createDate
+  createDate,
+  createFoodLog
 }

@@ -62,6 +62,11 @@ const getFlByDateSuccess = (data) => {
   }
 }
 
+const createFoodLogSuccess = (data) => {
+  console.log('createFoodLogSuccess in ui.js')
+  console.log(data)
+}
+
 const signUpSuccess = (data) => {
   console.log(data)
 }
@@ -84,5 +89,6 @@ module.exports = {
   getDateMastersSuccess,
   getFlByDateSuccess,
   signUpSuccess,
-  onCreateDateSuccess
+  onCreateDateSuccess,
+  createFoodLogSuccess
 }

@@ -40,9 +40,10 @@ const onChangePassword = function (event) {
 
 const onCreateDate = function (event) {
   event.preventDefault()
-  const date = $("input[name='credentials[date-create]']").val()
-  console.log(date)
-  api.createDate(date)
+  const data = getFormFields(event.target)
+  // const date = $("input[name='credentials[date-create]']").val()
+  // console.log(date)
+  api.createDate(data)
     .then(ui.onCreateDateSuccess)
     .catch(ui.fail)
 }
@@ -76,6 +77,16 @@ const onGetFlByDate = function (event) {
     .catch(ui.fail)
 }
 
+const onCreateFoodLog = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log('onCreateFoodLog in event.js')
+  console.log(data) // returns food_log object
+  api.createFoodLog(data)
+    .then(ui.createFoodLogSuccess)
+    .catch(ui.fail)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -85,6 +96,7 @@ const addHandlers = () => {
   $('#get-all-date-masters').on('click', onGetDateMasters)
   $('#get-food-by-date').on('submit', onGetFlByDate)
   $('#create-date').on('submit', onCreateDate)
+  $('#create-food-log').on('submit', onCreateFoodLog)
 }
 
 module.exports = {
