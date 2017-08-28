@@ -5,7 +5,6 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 
 // authApi.signUp(authUi.success, authUi.failure, data)
 const signUp = function (data) {
-  // console.log(data)
   return $.ajax({
     url: app.host + '/sign-up/',
     method: 'POST',
@@ -91,6 +90,18 @@ const getFoodLogs = function (data) {
   })
 }
 
+const getAllergicReactionLogs = function (data) {
+  console.log('getAllergicReactionLogs in api.js')
+  console.log(data)
+  return $.ajax({
+    method: 'GET',
+    url: app.host + '/allergic_reaction_logs/' + app.user.id,
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
 const getFlByDate = function (data) {
   console.log('getFlByDate data === ' + data)
   return $.ajax({
@@ -137,6 +148,7 @@ module.exports = {
   signOut,
   changePassword,
   getFoodLogs,
+  getAllergicReactionLogs,
   getDateMasters,
   getFlByDate,
   getFormFields,

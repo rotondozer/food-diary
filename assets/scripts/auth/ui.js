@@ -58,6 +58,10 @@ const getFoodLogsSuccess = (data) => {
   }
 }
 
+const getAllergicReactionLogsSuccess = (data) => {
+  console.log('getAllergicReactionLogsSuccess in ui.js')
+}
+
 const getFlByDateSuccess = (data) => {
   console.log(data.food_logs)
   const foodLogs = data.food_logs
@@ -97,6 +101,7 @@ module.exports = {
   signOutSuccess,
   changePasswordSuccess,
   getFoodLogsSuccess,
+  getAllergicReactionLogsSuccess,
   getDateMastersSuccess,
   getFlByDateSuccess,
   signUpSuccess,

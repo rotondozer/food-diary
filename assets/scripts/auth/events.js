@@ -64,6 +64,14 @@ const onGetFoodLogs = function (event) {
     .catch(ui.fail)
 }
 
+const onGetAllergicReactionLogs = function (event) {
+  event.preventDefault()
+  console.log('onGetAllergicReactionLogs in events.js')
+  api.getAllergicReactionLogs()
+    .then(ui.getAllergicReactionLogsSuccess)
+    .catch(ui.fail)
+}
+
 const onGetFlByDate = function (event) {
   event.preventDefault()
   // Get input 'yyyy-mm-dd'
@@ -117,6 +125,7 @@ const addHandlers = () => {
   $('#create-food-log').on('submit', onCreateFoodLog)
   $('#update-date').on('submit', onUpdateDate)
   $('#delete-date').on('submit', onDeleteDate)
+  $('#get-all-allergic-reaction-logs').on('submit', onGetAllergicReactionLogs)
 }
 
 module.exports = {

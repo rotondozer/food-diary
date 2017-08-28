@@ -51,7 +51,7 @@
 <!-- Change Password -->
     <form id="change-password">
       <div class="form-group">
-        <h4 for="">Change Password</h4>
+        <h4>Change Password</h4>
         <label for="">Old Password</label>
         <input type="password" name="passwords[old]" placeholder="Old Password" class="form-control"><br>
         <label for="">New Password</label>
@@ -68,7 +68,11 @@
     <form id="get-all-date-masters">
       <button type="submit" class="btn btn-primary">Get All Dates Logged By User</button>
     </form>
-    <!-- Date Input Filter food logs -->
+<!-- Get All Allergic Reactions Logged By User -->
+    <form id="get-all-allergic-reaction-logs">
+      <button type="submit" class="btn btn-info">Get All Allergic Reactions Logged By User</button>
+    </form>
+<!-- Get Food Logs by Date -->
     <form id="get-food-by-date" action="/date_masters" method="get">
       <div class="form-group">
         <label for="">Date</label>
@@ -77,7 +81,7 @@
       </div>
     </form>
 
-    <!-- Create Date -->
+<!-- Create Date Master -->
     <form id="create-date">
       <div class="form-group">
         <label for="">Date</label>
