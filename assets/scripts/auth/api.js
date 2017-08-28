@@ -114,6 +114,18 @@ const getFlByDate = function (data) {
   })
 }
 
+const getArlByDate = function (data) {
+  console.log('getArlByDate data === ' + data)
+  return $.ajax({
+    method: 'GET',
+    // url: /date_masters/:date_master_id/food_logs(.:format)
+    url: app.host + '/users/' + app.user.id + '/date_masters/' + data + '/allergic_reaction_logs',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
 const createFoodLog = function (data) {
   console.log('createFoodLog in api.js')
   console.log(data.food_log.date_master_id)
@@ -166,6 +178,7 @@ module.exports = {
   getAllergicReactionLogs,
   getDateMasters,
   getFlByDate,
+  getArlByDate,
   getFormFields,
   createDate,
   updateDate,

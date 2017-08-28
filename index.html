@@ -64,7 +64,7 @@
     <form id="get-all-food-logs">
       <button type="submit" class="btn btn-info">Get All Food Logs From User</button>
     </form>
-<!-- Get All Date Logged By User -->
+<!-- Get All Dates Logged By User -->
     <form id="get-all-date-masters">
       <button type="submit" class="btn btn-primary">Get All Dates Logged By User</button>
     </form>
@@ -72,12 +72,20 @@
     <form id="get-all-allergic-reaction-logs">
       <button type="submit" class="btn btn-info">Get All Allergic Reactions Logged By User</button>
     </form>
-<!-- Get Food Logs by Date -->
+<!-- Get Food Logs, filtered by Date -->
     <form id="get-food-by-date" action="/date_masters" method="get">
       <div class="form-group">
         <label for="">Date</label>
         <input type="text" name="date_master[date]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
         <button type="submit" class="btn btn-info" name="button">Get Food Logs</button>
+      </div>
+    </form>
+<!-- Get Allergic Reaction Logs, filtered by Date -->
+    <form id="get-allergic-reactions-by-date" action="/date_masters" method="get">
+      <div class="form-group">
+        <label for="">Date</label>
+        <input id="arl-date-input" type="text" name="date_master[date]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
+        <button type="submit" class="btn btn-info" name="button">Get Allergic Reaction Logs</button>
       </div>
     </form>
 

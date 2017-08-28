@@ -77,11 +77,24 @@ const onGetFlByDate = function (event) {
   // Get input 'yyyy-mm-dd'
   const dateFilter = $("input[name='date_master[date]']").val()
 
-  console.log('dateFilter === ' + dateFilter)
+  console.log('FL dateFilter === ' + dateFilter)
   console.log('onGetFlByDate in events.js')
   // pass input to API call
   api.getFlByDate(dateFilter)
     .then(ui.getFlByDateSuccess)
+    .catch(ui.fail)
+}
+
+const onGetArlByDate = function (event) {
+  event.preventDefault()
+  // Get input 'yyyy-mm-dd'
+  const dateFilter = $('#arl-date-input').val()
+
+  console.log('ARL dateFilter === ' + dateFilter)
+  console.log('onGetFlByDate in events.js')
+  // pass input to API call
+  api.getArlByDate(dateFilter)
+    .then(ui.getArlByDateSuccess)
     .catch(ui.fail)
 }
 
@@ -131,6 +144,7 @@ const addHandlers = () => {
   $('#get-all-food-logs').on('click', onGetFoodLogs)
   $('#get-all-date-masters').on('click', onGetDateMasters)
   $('#get-food-by-date').on('submit', onGetFlByDate)
+  $('#get-allergic-reactions-by-date').on('submit', onGetArlByDate)
   $('#create-date').on('submit', onCreateDate)
   $('#create-food-log').on('submit', onCreateFoodLog)
   $('#create-allergic-reaction-log').on('submit', onCreateAllergicReactionLog)

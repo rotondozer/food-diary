@@ -78,6 +78,12 @@ const getFlByDateSuccess = (data) => {
   }
 }
 
+const getArlByDateSuccess = (data) => {
+  console.log('getArlByDateSuccess in ui.js')
+  console.table(data)
+  console.log('NOW DISPLAY THIS INFO IN HTML')
+}
+
 const createFoodLogSuccess = (data) => {
   console.log('createFoodLogSuccess in ui.js')
   console.log(data)
@@ -110,6 +116,7 @@ module.exports = {
   getAllergicReactionLogsSuccess,
   getDateMastersSuccess,
   getFlByDateSuccess,
+  getArlByDateSuccess,
   signUpSuccess,
   onCreateDateSuccess,
   onUpdateDateSuccess,
