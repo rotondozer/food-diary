@@ -87,6 +87,16 @@ const onCreateFoodLog = function (event) {
     .catch(ui.fail)
 }
 
+const onUpdateFoodLogs = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log('onUpdateFoodLogs in events.js')
+  console.log(data)
+  api.updateFoodLog(data)
+    .then(ui.updateFoodLogSuccess)
+    .catch(ui.fail)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
