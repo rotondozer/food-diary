@@ -78,9 +78,8 @@ const getDateMasters = function (data) {
   })
 }
 
-const getFoodLogs = function (data) {
+const getFoodLogs = function () {
   console.log('getFoodLogs')
-  console.log(data)
   return $.ajax({
     method: 'GET',
     url: app.host + '/food_logs/' + app.user.id,
@@ -90,9 +89,8 @@ const getFoodLogs = function (data) {
   })
 }
 
-const getAllergicReactionLogs = function (data) {
+const getAllergicReactionLogs = function () {
   console.log('getAllergicReactionLogs in api.js')
-  console.log(data)
   return $.ajax({
     method: 'GET',
     url: app.host + '/allergic_reaction_logs/' + app.user.id,
