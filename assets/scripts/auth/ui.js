@@ -7,6 +7,7 @@ const signInSuccess = (data) => {
   console.log('sign in success!')
   $('#sign-up, #sign-in, .sign-up-prompt, .sign-in-prompt').hide()
   $('.page-2').show()
+  $("button[name='my-acct']").removeClass('disabled')
 }
 
 const signOutSuccess = () => {

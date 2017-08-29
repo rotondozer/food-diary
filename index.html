@@ -15,7 +15,7 @@
   <body class="container-fluid">
     <h1>Food &amp; Allergy Diary</h1>
     <h2>A way to trace food allergies over time</h2>
-    <button class="btn"type="button" name="my-acct">My Account</button>
+    <button class="btn disabled" type="button" name="my-acct">My Account</button>
     <h3 class="sign-in-prompt">Sign in to start logging meals and allergic reactions</h3>
     <!-- Sign Up -->
     <form id="sign-up">
@@ -68,10 +68,6 @@
       </div>
     </div>
 
-
-
-
-
     <!-- Creating and Querying Food And Allergic Reactions -->
     <div class="row">
       <div class="col-xs-4">
@@ -91,7 +87,7 @@
         <form id="get-food-by-date" class="page-2" action="/date_masters" method="get">
           <div class="form-group">
             <label for="">Date</label>
-            <input type="text" name="date_master[date]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
+            <input id="fl-date-input" type="text" name="date_master[date]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
             <button type="submit" class="btn btn-info" name="button">Get Food Logs</button>
           </div>
         </form>
@@ -164,39 +160,39 @@
     </div> <!-- END ROW -->
 
     <!-- Sign Out -->
-      <form id="sign-out" class="my-acct">
-        <button type="submit" class="btn btn-danger">Sign Out</button>
-      </form>
+    <form id="sign-out" class="my-acct">
+      <button type="submit" class="btn btn-danger">Sign Out</button>
+    </form>
 
     <!-- Change Password -->
-      <form id="change-password" class="my-acct">
-        <div class="form-group">
-          <h4>Change Password</h4>
-          <label for="">Old Password</label>
-          <input type="password" name="passwords[old]" placeholder="Old Password" class="form-control"><br>
-          <label for="">New Password</label>
-          <input type="password" name="passwords[new]" placeholder="New Password" class="form-control"><br>
-          <button type="submit" class="btn btn-primary" name="submit">Change Password</button>
-        </div>
-      </form>
+    <form id="change-password" class="my-acct">
+      <div class="form-group">
+        <h4>Change Password</h4>
+        <label for="">Old Password</label>
+        <input type="password" name="passwords[old]" placeholder="Old Password" class="form-control"><br>
+        <label for="">New Password</label>
+        <input type="password" name="passwords[new]" placeholder="New Password" class="form-control"><br>
+        <button type="submit" class="btn btn-primary" name="submit">Change Password</button>
+      </div>
+    </form>
 
-      <!-- Delete Log (Delete Date) -->
-      <form id="delete-date" class="my-acct">
-        <div class="form-group">
-          <label for="">Date</label>
-          <input type="text" name="date_master[date]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
-          <button type="submit" class="btn btn-danger" name="button">Delete Date</button>
-        </div>
-      </form>
+    <!-- Delete Log (Delete Date) -->
+    <form id="delete-date" class="my-acct">
+      <div class="form-group">
+        <label for="">Date</label>
+        <input type="text" name="date_master[date]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
+        <button type="submit" class="btn btn-danger" name="button">Delete Date</button>
+      </div>
+    </form>
 
-      <!-- Update Date -->
-      <form id="update-date" class="my-acct" action="/date_masters" method="patch">
-        <div class="form-group">
-          <label for="">Date</label>
-          <input type="text" name="date_master[id]" value="" placeholder="YYYY-MM-DD Old Date" class="form-control"><br>
-          <input type="text" name="date_master[date]" value="" placeholder="YYYY-MM-DD New Date" class="form-control"><br>
-          <button type="submit" class="btn btn-info" name="button">Update Date</button>
-        </div>
-      </form>
+    <!-- Update Date -->
+    <form id="update-date" class="my-acct" action="/date_masters" method="patch">
+      <div class="form-group">
+        <label for="">Date</label>
+        <input type="text" name="date_master[id]" value="" placeholder="YYYY-MM-DD Old Date" class="form-control"><br>
+        <input type="text" name="date_master[date]" value="" placeholder="YYYY-MM-DD New Date" class="form-control"><br>
+        <button type="submit" class="btn btn-info" name="button">Update Date</button>
+      </div>
+    </form>
   </body>
 </html>

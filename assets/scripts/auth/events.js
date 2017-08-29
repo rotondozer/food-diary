@@ -75,7 +75,7 @@ const onGetAllergicReactionLogs = function (event) {
 const onGetFlByDate = function (event) {
   event.preventDefault()
   // Get input 'yyyy-mm-dd'
-  const dateFilter = $("input[name='date_master[date]']").val()
+  const dateFilter = $('#fl-date-input').val()
 
   console.log('FL dateFilter === ' + dateFilter)
   console.log('onGetFlByDate in events.js')
@@ -87,7 +87,6 @@ const onGetFlByDate = function (event) {
 
 const onGetArlByDate = function (event) {
   event.preventDefault()
-  // Get input 'yyyy-mm-dd'
   const dateFilter = $('#arl-date-input').val()
 
   console.log('ARL dateFilter === ' + dateFilter)
@@ -147,8 +146,12 @@ const emptyInputVals = function (event) {
 }
 
 const showMyAcct = function () {
-  $('.page-2').hide()
-  // show my account
+  if ($(this).hasClass('disabled')) {
+    return
+  } else {
+    $('.page-2').hide()
+    $('.my-acct').show()
+  }
 }
 
 const addHandlers = () => {
