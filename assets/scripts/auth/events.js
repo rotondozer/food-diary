@@ -151,6 +151,8 @@ const showMyAcct = function () {
   } else {
     $('.page-2').hide()
     $('.my-acct').show()
+    $("button[name='my-acct']").hide()
+    $("button[name='main']").show()
   }
 }
 

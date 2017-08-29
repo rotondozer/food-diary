@@ -14,7 +14,11 @@ const signOutSuccess = () => {
   app.user = null
   console.log(app)
   console.log('signed out')
-  // $('#signedInUser').text('')
+  $('.page-2').hide()
+  $('.my-acct').hide()
+  $('#sign-up').hide()
+  $("button[name='main']").hide()
+  $('#sign-up, #sign-in, .sign-up-prompt, .sign-in-prompt').show()
 }
 
 const changePasswordSuccess = () => {
