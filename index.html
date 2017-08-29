@@ -1,178 +1,179 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <title>Food Diary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags unless you know what you are doing -->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <!-- Do not add `link` tags unless you know what you are doing -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <!-- Do not add `script` tags unless you know what you are doing -->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
+    <!-- Do not add `script` tags unless you know what you are doing -->
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  </head>
+  <body class="container-fluid">
+  <!-- Food Logs Appending -->
+  <div class="row">
+    <h3>Food Logs</h3>
+    <div class="col-xs-4">
+      <h4>Meal Description</h4>
+      <div class="food-description"></div>
+    </div>
+    <div class="col-xs-4">
+      <h4>Time</h4>
+      <div class="food-time"></div>
+    </div>
+    <div class="col-xs-4">
+      <h4>Date</h4>
+      <div class="food-date"></div>
+    </div>
+  </div> <!-- END ROW -->
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+  <!-- Allergic Reaction Logs Appending -->
+  <div class="row">
+    <h3>Allergic Reaction Logs</h3>
+    <div class="col-xs-4">
+      <h4>Symptom</h4>
+      <div class="reaction-symptom"></div>
+    </div>
+    <div class="col-xs-4">
+      <h4>Time</h4>
+      <div class="reaction-time"></div>
+    </div>
+    <div class="col-xs-4">
+      <h4>Date</h4>
+      <div class="reaction-date"></div>
+    </div>
+  </div> <!-- END ROW -->
+
+
+  <div class="all-dates-logged">
+    <h3>Logs Initiated</h3>
+
+  </div>
 
 <!-- Sign Up -->
-      <form id="sign-up">
-        <div class="form-group">
-          <label for="">Username</label>
-          <input type="text" name="credentials[email]" value="" placeholder="Email" class="form-control"><br>
-          <label for="">Password</label>
-          <input type="password" name="credentials[password]" value="" placeholder="Password" class="form-control">
-          <input type="password" name="credentials[password_confirmation]" value="" placeholder="Confirm Password" class="form-control"><br>
-          <button type="submit" class="btn btn-primary" name="button">Sign Up</button>
-        </div>
-    </form>
+    <form id="sign-up">
+      <div class="form-group">
+        <label for="">Username</label>
+        <input type="text" name="credentials[email]" value="" placeholder="Email" class="form-control"><br>
+        <label for="">Password</label>
+        <input type="password" name="credentials[password]" value="" placeholder="Password" class="form-control">
+        <input type="password" name="credentials[password_confirmation]" value="" placeholder="Confirm Password" class="form-control"><br>
+        <button type="submit" class="btn btn-primary" name="button">Sign Up</button>
+      </div>
+  </form>
 
 <!-- Sign In -->
-    <form id="sign-in">
-      <div class="form-group">
-        <input type="text" class="form-control" name="credentials[email]" value="" placeholder="Email">
-        <input type="password" class="form-control" name="credentials[password]" value="" placeholder="Password">
-        <button type="submit" class="btn btn-default">Login</button>
-      </div>
-    </form>
+  <form id="sign-in">
+    <div class="form-group">
+      <input type="text" class="form-control" name="credentials[email]" value="" placeholder="Email">
+      <input type="password" class="form-control" name="credentials[password]" value="" placeholder="Password">
+      <button type="submit" class="btn btn-default">Login</button>
+    </div>
+  </form>
 
 <!-- Sign Out -->
-    <form id="sign-out">
-      <button type="submit" class="btn btn-danger">Sign Out</button>
-    </form>
+  <form id="sign-out">
+    <button type="submit" class="btn btn-danger">Sign Out</button>
+  </form>
 
 <!-- Change Password -->
-    <form id="change-password">
-      <div class="form-group">
-        <h4>Change Password</h4>
-        <label for="">Old Password</label>
-        <input type="password" name="passwords[old]" placeholder="Old Password" class="form-control"><br>
-        <label for="">New Password</label>
-        <input type="password" name="passwords[new]" placeholder="New Password" class="form-control"><br>
-        <button type="submit" class="btn btn-primary" name="submit">Change Password</button>
-      </div>
-    </form>
+  <form id="change-password">
+    <div class="form-group">
+      <h4>Change Password</h4>
+      <label for="">Old Password</label>
+      <input type="password" name="passwords[old]" placeholder="Old Password" class="form-control"><br>
+      <label for="">New Password</label>
+      <input type="password" name="passwords[new]" placeholder="New Password" class="form-control"><br>
+      <button type="submit" class="btn btn-primary" name="submit">Change Password</button>
+    </div>
+  </form>
 
 <!-- Get All Food Logs from User -->
-    <form id="get-all-food-logs">
-      <button type="submit" class="btn btn-info">Get All Food Logs From User</button>
-    </form>
+  <form id="get-all-food-logs">
+    <button type="submit" class="btn btn-info">Get All Food Logs From User</button>
+  </form>
 <!-- Get All Dates Logged By User -->
-    <form id="get-all-date-masters">
-      <button type="submit" class="btn btn-primary">Get All Dates Logged By User</button>
-    </form>
+  <form id="get-all-date-masters">
+    <button type="submit" class="btn btn-primary">Get All Dates Logged By User</button>
+  </form>
 <!-- Get All Allergic Reactions Logged By User -->
-    <form id="get-all-allergic-reaction-logs">
-      <button type="submit" class="btn btn-info">Get All Allergic Reactions Logged By User</button>
-    </form>
+  <form id="get-all-allergic-reaction-logs">
+    <button type="submit" class="btn btn-info">Get All Allergic Reactions Logged By User</button>
+  </form>
 <!-- Get Food Logs, filtered by Date -->
-    <form id="get-food-by-date" action="/date_masters" method="get">
-      <div class="form-group">
-        <label for="">Date</label>
-        <input type="text" name="date_master[date]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
-        <button type="submit" class="btn btn-info" name="button">Get Food Logs</button>
-      </div>
-    </form>
+  <form id="get-food-by-date" action="/date_masters" method="get">
+    <div class="form-group">
+      <label for="">Date</label>
+      <input type="text" name="date_master[date]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
+      <button type="submit" class="btn btn-info" name="button">Get Food Logs</button>
+    </div>
+  </form>
 <!-- Get Allergic Reaction Logs, filtered by Date -->
-    <form id="get-allergic-reactions-by-date" action="/date_masters" method="get">
-      <div class="form-group">
-        <label for="">Date</label>
-        <input id="arl-date-input" type="text" name="date_master[date]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
-        <button type="submit" class="btn btn-info" name="button">Get Allergic Reaction Logs</button>
-      </div>
-    </form>
+  <form id="get-allergic-reactions-by-date" action="/date_masters" method="get">
+    <div class="form-group">
+      <label for="">Date</label>
+      <input id="arl-date-input" type="text" name="date_master[date]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
+      <button type="submit" class="btn btn-info" name="button">Get Allergic Reaction Logs</button>
+    </div>
+  </form>
 
 <!-- Create Date Master -->
-    <form id="create-date">
-      <div class="form-group">
-        <label for="">Date</label>
-        <input type="text" name="date_master[date]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
-        <button type="submit" class="btn btn-success" name="button">Create Date</button>
-      </div>
-    </form>
+  <form id="create-date">
+    <div class="form-group">
+      <label for="">Date</label>
+      <input type="text" name="date_master[date]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
+      <button type="submit" class="btn btn-success" name="button">Create Date</button>
+    </div>
+  </form>
 
-    <!-- Create Date -->
-    <form id="delete-date">
-      <div class="form-group">
-        <label for="">Date</label>
-        <input type="text" name="date_master[date]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
-        <button type="submit" class="btn btn-danger" name="button">Delete Date</button>
-      </div>
-    </form>
+  <!-- Create Date -->
+  <form id="delete-date">
+    <div class="form-group">
+      <label for="">Date</label>
+      <input type="text" name="date_master[date]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
+      <button type="submit" class="btn btn-danger" name="button">Delete Date</button>
+    </div>
+  </form>
 
-    <!-- Update Date -->
-    <form id="update-date" action="/date_masters" method="patch">
-      <div class="form-group">
-        <label for="">Date</label>
-        <input type="text" name="date_master[id]" value="" placeholder="YYYY-MM-DD Old Date" class="form-control"><br>
-        <input type="text" name="date_master[date]" value="" placeholder="YYYY-MM-DD New Date" class="form-control"><br>
-        <button type="submit" class="btn btn-info" name="button">Update Date</button>
-      </div>
-    </form>
+  <!-- Update Date -->
+  <form id="update-date" action="/date_masters" method="patch">
+    <div class="form-group">
+      <label for="">Date</label>
+      <input type="text" name="date_master[id]" value="" placeholder="YYYY-MM-DD Old Date" class="form-control"><br>
+      <input type="text" name="date_master[date]" value="" placeholder="YYYY-MM-DD New Date" class="form-control"><br>
+      <button type="submit" class="btn btn-info" name="button">Update Date</button>
+    </div>
+  </form>
 
 <!-- CREATE food_log -->
-    <form id="create-food-log" action="/food_logs" method="post">
+  <form id="create-food-log" action="/food_logs" method="post">
+    <div class="form-group">
+      <label for="">Food</label>
+      <input type="text" name="food_log[description]" value="" placeholder="Description" class="form-control"><br>
+      <label for="">Date</label>
+      <input type="text" name="food_log[date_master_id]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
+      <label for="">Time</label>
+      <input type="text" name="food_log[time]" value="" placeholder="HH:MM" class="form-control"><br>
+      <button type="submit" class="btn btn-success" name="button">Create Food Log</button>
+    </div>
+  </form>
+
+<!-- CREATE allergic reaction log -->
+    <form id="create-allergic-reaction-log" action="/allergic_reaction_logs" method="post">
       <div class="form-group">
-        <label for="">Food</label>
-        <input type="text" name="food_log[description]" value="" placeholder="Description" class="form-control"><br>
+        <label for="">Symptom</label>
+        <input type="text" name="allergic_reaction_log[symptom]" value="" placeholder="Description" class="form-control"><br>
         <label for="">Date</label>
-        <input type="text" name="food_log[date_master_id]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
+        <input type="text" name="allergic_reaction_log[date_master_id]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
         <label for="">Time</label>
-        <input type="text" name="food_log[time]" value="" placeholder="HH:MM" class="form-control"><br>
-        <button type="submit" class="btn btn-success" name="button">Create Food Log</button>
+        <input type="text" name="allergic_reaction_log[time]" value="" placeholder="HH:MM" class="form-control"><br>
+        <button type="submit" class="btn btn-success" name="button">Create Allergic Reaction Log</button>
       </div>
     </form>
 
-  <!-- CREATE allergic reaction log -->
-      <form id="create-allergic-reaction-log" action="/allergic_reaction_logs" method="post">
-        <div class="form-group">
-          <label for="">Symptom</label>
-          <input type="text" name="allergic_reaction_log[symptom]" value="" placeholder="Description" class="form-control"><br>
-          <label for="">Date</label>
-          <input type="text" name="allergic_reaction_log[date_master_id]" value="" placeholder="YYYY-MM-DD" class="form-control"><br>
-          <label for="">Time</label>
-          <input type="text" name="allergic_reaction_log[time]" value="" placeholder="HH:MM" class="form-control"><br>
-          <button type="submit" class="btn btn-success" name="button">Create Allergic Reaction Log</button>
-        </div>
-      </form>
 
-    <!-- Food Logs Appending -->
-    <div class="row">
-      <div class="col-xs-4">
-        <div class="food-description"></div>
-      </div>
-      <div class="col-xs-4">
-        <div class="food-time"></div>
-      </div>
-      <div class="col-xs-4">
-        <div class="food-date"></div>
-      </div>
-    </div> <!-- END ROW -->
-
-    <!-- Allergic Reaction Logs Appending -->
-    <div class="row">
-      <div class="col-xs-4">
-        <div class="reaction-symptom"></div>
-      </div>
-      <div class="col-xs-4">
-        <div class="reaction-time"></div>
-      </div>
-      <div class="col-xs-4">
-        <div class="reaction-date"></div>
-      </div>
-    </div> <!-- END ROW -->
-
-
-    <div class="all-dates-logged">
-
-    </div>
   </body>
 </html>
 

@@ -61,6 +61,16 @@ const getFoodLogsSuccess = (data) => {
 const getAllergicReactionLogsSuccess = (data) => {
   console.log('getAllergicReactionLogsSuccess in ui.js')
   console.table(data)
+  const ARLogs = data.allergic_reaction_logs
+  if (ARLogs.length > 0) {
+    for (let i = 0; i < ARLogs.length; i++) {
+      $('.reaction-symptom').append('<div>Symptom: ' + ARLogs[i].symptom + '</div>')
+      $('.reaction-time').append('<div>Time: ' + ARLogs[i].time + '</div>')
+      $('.reaction-date').append('<div>Date: ' + ARLogs[i].date_master.date + '</div>')
+    }
+  } else {
+    $('.reaction-symptom').append('<div>Looks like you haven\'t made any logs yet</div>')
+  }
 }
 
 const getFlByDateSuccess = (data) => {
@@ -90,7 +100,7 @@ const getArlByDateSuccess = (data) => {
       $('.reaction-date').append('<div>Date: ' + ARLogs[i].date_master.date + '</div>')
     }
   } else {
-    $('.food-description').append('<div>Looks like you haven\'t made any logs yet</div>')
+    $('.reaction-symptom').append('<div>Looks like you haven\'t made any logs yet</div>')
   }
 }
 
