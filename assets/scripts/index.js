@@ -18,5 +18,7 @@ $(() => {
   $('.page-2').hide()
   $('.my-acct').hide()
   $('#sign-up').hide()
+  $("button[name='main']").hide()
+  $('.all-dates-logged').hide()
   authEvents.addHandlers()
 })

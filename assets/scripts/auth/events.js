@@ -151,7 +151,14 @@ const showMyAcct = function () {
   } else {
     $('.page-2').hide()
     $('.my-acct').show()
+    $("button[name='my-acct']").hide()
+    $("button[name='main']").show()
   }
+}
+
+const closeMyAcct = function () {
+  $('.my-acct').hide()
+  $(".page-2, button[name='my-acct']").show()
 }
 
 const addHandlers = () => {
@@ -172,6 +179,7 @@ const addHandlers = () => {
   $('.sign-up-prompt').on('click', onSignUpPrompt)
   $('form').on('submit', emptyInputVals)
   $("button[name='my-acct']").on('click', showMyAcct)
+  $("button[name='main']").on('click', closeMyAcct)
 }
 
 module.exports = {

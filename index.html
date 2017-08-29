@@ -16,6 +16,7 @@
     <h1>Food &amp; Allergy Diary</h1>
     <h2>A way to trace food allergies over time</h2>
     <button class="btn disabled" type="button" name="my-acct">My Account</button>
+    <button class="btn my-acct" type="button" name="main">Back to Main</button>
     <h3 class="sign-in-prompt">Sign in to start logging meals and allergic reactions</h3>
     <!-- Sign Up -->
     <form id="sign-up">
@@ -62,17 +63,14 @@
         <h4>Date</h4>
         <div class="date-master-date"></div>
       </div>
-      <div class="col-xs-4">
-        <h4>Time</h4>
-        <div class="date-master-time"></div>
-      </div>
     </div>
 
     <!-- Creating and Querying Food And Allergic Reactions -->
-    <div class="row">
+    <div class="row page-2">
+      <h3>Add To Your Log</h3>
       <div class="col-xs-4">
         <!-- CREATE food_log -->
-        <form id="create-food-log" class="page-2" action="/food_logs" method="post">
+        <form id="create-food-log" action="/food_logs" method="post">
           <div class="form-group">
             <label for="">Food</label>
             <input type="text" name="food_log[description]" value="" placeholder="Description" class="form-control"><br>
