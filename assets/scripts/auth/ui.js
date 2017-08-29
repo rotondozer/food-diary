@@ -14,11 +14,8 @@ const signOutSuccess = () => {
   app.user = null
   console.log(app)
   console.log('signed out')
-  $('.page-2').hide()
-  $('.my-acct').hide()
-  $('#sign-up').hide()
-  $("button[name='main']").hide()
-  $('#sign-up, #sign-in, .sign-up-prompt, .sign-in-prompt').show()
+  $(".page-2, .my-acct, #sign-up, button[name='main']").hide()
+  $('#sign-in, .sign-up-prompt, .sign-in-prompt').show()
 }
 
 const changePasswordSuccess = () => {
@@ -64,7 +61,7 @@ const getFoodLogsSuccess = (data) => {
     for (let i = 0; i < data.food_logs.length; i++) {
       $('.food-description').html('<div>' + data.food_logs[i].description + '</div>')
       $('.food-time').html('<div>' + data.food_logs[i].time + '</div>')
-      $('.food-date').html('<div>Date: ' + data.food_logs[i].date_master.date + '</div>')
+      $('.food-date').html('<div>' + data.food_logs[i].date_master.date + '</div>')
     }
   } else {
     $('.user-message').html('<div>Looks like you haven\'t made any food logs yet</div>')
@@ -92,9 +89,9 @@ const getFlByDateSuccess = (data) => {
   console.log('getFlByDateSuccess')
   if (foodLogs.length > 0) {
     for (let i = 0; i < foodLogs.length; i++) {
-      $('.food-description').html('<div>Description: ' + foodLogs[i].description + '</div>')
-      $('.food-time').html('<div>Time: ' + foodLogs[i].time + '</div>')
-      $('.food-date').html('<div>Date: ' + foodLogs[i].date_master.date + '</div>')
+      $('.food-description').html('<div>' + foodLogs[i].description + '</div>')
+      $('.food-time').html('<div>' + foodLogs[i].time + '</div>')
+      $('.food-date').html('<div>' + foodLogs[i].date_master.date + '</div>')
     }
   } else {
     $('.user-message').html('<div>Looks like you haven\'t made any logs yet</div>')
