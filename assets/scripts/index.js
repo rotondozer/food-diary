@@ -15,5 +15,8 @@ $(() => {
 require('./example')
 
 $(() => {
+  $('.page-2').hide()
+  $('.my-acct').hide()
+  $('#sign-up').hide()
   authEvents.addHandlers()
 })

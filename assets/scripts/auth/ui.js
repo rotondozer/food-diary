@@ -4,9 +4,9 @@ const app = require('../app.js')
 
 const signInSuccess = (data) => {
   app.user = data.user
-  console.log(app)
   console.log('sign in success!')
-  // $('#signedInUser').text(data.user.email)
+  $('#sign-up, #sign-in, .sign-up-prompt, .sign-in-prompt').hide()
+  $('.page-2').show()
 }
 
 const signOutSuccess = () => {
