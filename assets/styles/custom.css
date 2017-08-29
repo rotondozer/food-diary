@@ -1,3 +1,23 @@
+body {
+  font-family: 'Josefin Sans', sans-serif !important;
+  background-color: rgba(16, 131, 143, 0.89) !important;
+}
+
+header * {
+  display: inline-block;
+  margin: 10px;
+
+}
+
+h1 {
+  border-bottom: 3px solid black;
+}
+
 .sign-up-prompt {
-  background-color: red;
+  background-color: rgba(223, 174, 47, 0.66);
+  padding: 10px;
+  width: 400px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 40px;
 }

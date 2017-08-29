@@ -7,43 +7,54 @@
     <!-- Do not add `link` tags unless you know what you are doing -->
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
     <!-- Do not add `script` tags unless you know what you are doing -->
     <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
     <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
   </head>
 
-  <body class="container-fluid">
-    <h1>Food &amp; Allergy Diary</h1>
-    <h2>A way to trace food allergies over time</h2>
-    <button class="btn disabled" type="button" name="my-acct">My Account</button>
+  <body class="container">
+    <header>
+      <h1>Food &amp; Allergy Diary</h1>
+      <h2>A way to trace food allergies over time</h2>
+      <button class="btn disabled" type="button" name="my-acct">My Account</button>
+    </header>
+
     <button class="btn my-acct" type="button" name="main">Back to Main</button>
     <h3 class="sign-in-prompt">Sign in to start logging meals and allergic reactions</h3>
-    <!-- Sign Up -->
-    <form id="sign-up">
-      <div class="form-group">
-        <h4>Sign Up!</h4>
-        <label for="">Username</label>
-        <input type="text" name="credentials[email]" value="" placeholder="Email" class="form-control"><br>
-        <label for="">Password</label>
-        <input type="password" name="credentials[password]" value="" placeholder="Password" class="form-control">
-        <input type="password" name="credentials[password_confirmation]" value="" placeholder="Confirm Password" class="form-control"><br>
-        <button type="submit" class="btn btn-primary" name="button">Sign Up</button>
-      </div>
-    </form>
 
-    <!-- Sign In -->
-    <form id="sign-in">
-      <div class="form-group">
-        <h4>Login</h4>
-        <input type="text" class="form-control" name="credentials[email]" value="" placeholder="Email">
-        <input type="password" class="form-control" name="credentials[password]" value="" placeholder="Password">
-        <button type="submit" class="btn btn-primary">Login</button>
+    <div class="row">
+      <!-- Sign In -->
+      <div class="col-xs-5">
+        <form id="sign-in">
+          <div class="form-group">
+            <h4>Login</h4>
+            <input type="text" class="form-control" name="credentials[email]" value="" placeholder="Email">
+            <input type="password" class="form-control" name="credentials[password]" value="" placeholder="Password">
+            <button type="submit" class="btn btn-primary">Login</button>
+          </div>
+        </form>
       </div>
-    </form>
+      <!-- Sign Up -->
+      <div class="col-xs-5">
+        <form id="sign-up">
+          <div class="form-group">
+            <h4>Sign Up!</h4>
+            <label for="">Username</label>
+            <input type="text" name="credentials[email]" value="" placeholder="Email" class="form-control"><br>
+            <label for="">Password</label>
+            <input type="password" name="credentials[password]" value="" placeholder="Password" class="form-control">
+            <input type="password" name="credentials[password_confirmation]" value="" placeholder="Confirm Password" class="form-control"><br>
+            <button type="submit" class="btn btn-primary" name="button">Sign Up</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-xs-5 sign-up-prompt">
+        <h4>Don't have an account yet?<br></h4>
+      </div>
+    </div>  <!-- END ROW -->
 
-    <div class="sign-up-prompt">
-      <h4>Don't have an account yet?<br></h4>
-    </div>
+
     <!-- Initialize Log (Create Date Master) -->
     <form id="create-date" class="page-2">
       <div class="form-group">
