@@ -75,7 +75,7 @@ const onGetAllergicReactionLogs = function (event) {
 const onGetFlByDate = function (event) {
   event.preventDefault()
   // Get input 'yyyy-mm-dd'
-  const dateFilter = $("input[name='date_master[date]']").val()
+  const dateFilter = $('#fl-date-input').val()
 
   console.log('FL dateFilter === ' + dateFilter)
   console.log('onGetFlByDate in events.js')
@@ -87,7 +87,6 @@ const onGetFlByDate = function (event) {
 
 const onGetArlByDate = function (event) {
   event.preventDefault()
-  // Get input 'yyyy-mm-dd'
   const dateFilter = $('#arl-date-input').val()
 
   console.log('ARL dateFilter === ' + dateFilter)
@@ -136,6 +135,25 @@ const onDeleteDate = function (event) {
     .catch(ui.fail)
 }
 
+const onSignUpPrompt = function () {
+  $(this).hide()
+  $('#sign-up').show()
+}
+
+const emptyInputVals = function (event) {
+  event.preventDefault()
+  $('input').val('')
+}
+
+const showMyAcct = function () {
+  if ($(this).hasClass('disabled')) {
+    return
+  } else {
+    $('.page-2').hide()
+    $('.my-acct').show()
+  }
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
@@ -151,6 +169,9 @@ const addHandlers = () => {
   $('#update-date').on('submit', onUpdateDate)
   $('#delete-date').on('submit', onDeleteDate)
   $('#get-all-allergic-reaction-logs').on('submit', onGetAllergicReactionLogs)
+  $('.sign-up-prompt').on('click', onSignUpPrompt)
+  $('form').on('submit', emptyInputVals)
+  $("button[name='my-acct']").on('click', showMyAcct)
 }
 
 module.exports = {
