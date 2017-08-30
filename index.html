@@ -17,7 +17,7 @@
     <header>
       <h1>Food &amp; Allergy Diary</h1>
       <h2>A way to trace food allergies over time</h2>
-      <button class="btn disabled" type="button" name="my-acct">My Account</button>
+      <button class="btn btn-primary disabled" type="button" name="my-acct">My Account</button>
     </header>
 
     <button class="btn my-acct" type="button" name="main">Back to Main</button>
@@ -71,7 +71,7 @@
       <!-- Get All Dates Logged By User -->
       <div class="col-xs-2">
         <form id="get-all-date-masters" class="page-2">
-          <button type="submit" class="btn btn-primary" name="see-logs">See Existing Logs</button>
+          <button type="submit" class="btn btn-info" name="see-logs">See Existing Logs</button>
         </form>
       </div>
     </div>
@@ -207,8 +207,8 @@
     <form id="update-date" class="my-acct" action="/date_masters" method="patch">
       <div class="form-group">
         <label for="">Date</label>
-        <input type="text" name="date_master[id]" value="" placeholder="YYYY-MM-DD Old Date" class="form-control"><br>
-        <input type="text" name="date_master[date]" value="" placeholder="YYYY-MM-DD New Date" class="form-control"><br>
+        <input type="text" name="date_master[id]" value="" placeholder="Old Date" class="form-control"><br>
+        <input type="text" name="date_master[date]" value="" placeholder="New Date" class="form-control"><br>
         <button type="submit" class="btn btn-info" name="button">Update Date</button>
       </div>
     </form>
