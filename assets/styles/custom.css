@@ -5,8 +5,7 @@ body {
 
 header * {
   display: inline-block;
-  margin: 10px;
-
+  margin: 15px;
 }
 
 h1 {
@@ -20,4 +19,9 @@ h1 {
   border-radius: 5px;
   text-align: center;
   margin-top: 40px;
+}
+
+button[name='create-log'], button[name='see-logs'] {
+  margin-top: 20px;
+  width: 150px;
 }
