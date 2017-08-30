@@ -12,14 +12,14 @@ const signInSuccess = (data) => {
 
 const signOutSuccess = () => {
   app.user = null
-  console.log(app)
-  console.log('signed out')
+  // console.log(app)
+  // console.log('signed out')
   $(".page-2, .my-acct, #sign-up, button[name='main']").hide()
   $('#sign-in, .sign-up-prompt, .sign-in-prompt').show()
 }
 
 const changePasswordSuccess = () => {
-  console.log('Password Successfully Changed.')
+  // console.log('Password Successfully Changed.')
 }
 
 const onCreateDateSuccess = (data) => {
@@ -30,107 +30,95 @@ const onCreateDateSuccess = (data) => {
 }
 
 const onUpdateDateSuccess = (data) => {
-  console.log('updated date successfully!')
-  console.log(data)
+  // console.log(data)
 }
 
 const onDeleteDateSuccess = (data) => {
-  console.log('DELETED date successfully')
-  console.log(data)
+  // console.log(data)
 }
 
 const getDateMastersSuccess = (data) => {
-  console.log('getDateMastersSuccess in ui.js')
-  console.log(data)
-  console.table(data.date_masters)
+  $('.date-master-date').html('')
   const date = data.date_masters
   if (date.length > 0) {
     for (let i = 0; i < date.length; i++) {
-      $('.date-master-date').html('<div>' + date[i].date + '</div>')
+      $('.date-master-date').append('<div>' + date[i].date + '</div>')
     }
   } else {
-    $('.user-message').html('<div>Looks like you haven\'t initialized any logs yet</div>')
+    $('.user-message').append('<div>Looks like you haven\'t initialized any logs yet</div>')
   }
 }
 
 const getFoodLogsSuccess = (data) => {
-  console.log('getFoodLogsSuccess in ui.js')
-  console.log(data)
-  console.table(data.food_logs)
+  $('.food-description, .food-time, .food-date').html('')
   if (data.food_logs.length > 0) {
     for (let i = 0; i < data.food_logs.length; i++) {
-      $('.food-description').html('<div>' + data.food_logs[i].description + '</div>')
-      $('.food-time').html('<div>' + data.food_logs[i].time + '</div>')
-      $('.food-date').html('<div>' + data.food_logs[i].date_master.date + '</div>')
+      $('.food-description').append('<div>' + data.food_logs[i].description + '</div>')
+      $('.food-time').append('<div>' + data.food_logs[i].time + '</div>')
+      $('.food-date').append('<div>' + data.food_logs[i].date_master.date + '</div>')
     }
   } else {
-    $('.user-message').html('<div>Looks like you haven\'t made any food logs yet</div>')
+    $('.user-message').append('<div>Looks like you haven\'t made any food logs yet</div>')
   }
 }
 
 const getAllergicReactionLogsSuccess = (data) => {
-  console.log('getAllergicReactionLogsSuccess in ui.js')
-  console.table(data)
+  $('.reaction-symptom, .reaction-time, .reaction-date').html('')
   const ARLogs = data.allergic_reaction_logs
   if (ARLogs.length > 0) {
     for (let i = 0; i < ARLogs.length; i++) {
-      $('.reaction-symptom').html('<div>' + ARLogs[i].symptom + '</div>')
-      $('.reaction-time').html('<div>' + ARLogs[i].time + '</div>')
-      $('.reaction-date').html('<div>' + ARLogs[i].date_master.date + '</div>')
+      $('.reaction-symptom').append('<div>' + ARLogs[i].symptom + '</div>')
+      $('.reaction-time').append('<div>' + ARLogs[i].time + '</div>')
+      $('.reaction-date').append('<div>' + ARLogs[i].date_master.date + '</div>')
     }
   } else {
-    $('.user-message').html('<div>Looks like you haven\'t made any allergy logs yet</div>')
+    $('.user-message').append('<div>Looks like you haven\'t made any allergy logs yet</div>')
   }
 }
 
 const getFlByDateSuccess = (data) => {
-  console.log(data.food_logs)
+  $('.food-description, .food-date, .food-time').html('')
   const foodLogs = data.food_logs
-  console.log('getFlByDateSuccess')
   if (foodLogs.length > 0) {
     for (let i = 0; i < foodLogs.length; i++) {
-      $('.food-description').html('<div>' + foodLogs[i].description + '</div>')
-      $('.food-time').html('<div>' + foodLogs[i].time + '</div>')
-      $('.food-date').html('<div>' + foodLogs[i].date_master.date + '</div>')
+      $('.food-description').append('<div>' + foodLogs[i].description + '</div>')
+      $('.food-time').append('<div>' + foodLogs[i].time + '</div>')
+      $('.food-date').append('<div>' + foodLogs[i].date_master.date + '</div>')
     }
   } else {
-    $('.user-message').html('<div>Looks like you haven\'t made any logs yet</div>')
+    $('.user-message').append('<div>Looks like you haven\'t made any logs yet</div>')
   }
 }
 
 const getArlByDateSuccess = (data) => {
-  console.log('getArlByDateSuccess in ui.js')
-  console.table(data.allergic_reaction_logs)
+  $('.reaction-symptom, .reaction-time, .reaction-date').html('')
   const ARLogs = data.allergic_reaction_logs
-  console.log('NOW DISPLAY THIS INFO IN HTML')
   if (ARLogs.length > 0) {
     for (let i = 0; i < ARLogs.length; i++) {
-      $('.reaction-symptom').html('<div>' + ARLogs[i].symptom + '</div>')
-      $('.reaction-time').html('<div>' + ARLogs[i].time + '</div>')
-      $('.reaction-date').html('<div>' + ARLogs[i].date_master.date + '</div>')
+      $('.reaction-symptom').append('<div>' + ARLogs[i].symptom + '</div>')
+      $('.reaction-time').append('<div>' + ARLogs[i].time + '</div>')
+      $('.reaction-date').append('<div>' + ARLogs[i].date_master.date + '</div>')
     }
   } else {
-    $('.user-message').html('<div>Looks like you haven\'t made any logs yet</div>')
+    $('.user-message').append('<div>Looks like you haven\'t made any logs yet</div>')
   }
 }
 
 const createFoodLogSuccess = (data) => {
-  console.log('createFoodLogSuccess in ui.js')
-  console.log(data)
+  // console.log(data)
 }
 
 const createAllergicReactionLogSuccess = (data) => {
-  console.log('createAllergicReactionLogSuccess in ui.js')
-  console.table(data)
+  // console.table(data)
 }
 
 const signUpSuccess = (data) => {
   $('#sign-up').hide()
-  console.log(data)
+  // console.log(data)
 }
 
 const success = (data) => {
-  console.log(data)
+  // console.log(data)
 }
 
 const failure = (error) => {
