@@ -1,11 +1,15 @@
-A Food Diary
+# A Food Diary
 
 This app was inspired by my lovely girlfriend who is plagued with allergies to food and other environmental variables. Some are known, many are not. We spend a significant amount of time trying to remember what she ate and when, and if it was succeeded by a similar allergic reaction.
 
-Goal:
+## Use:
+
+After creating a profile and signing in, begin by entering a date to initialize the log. Once the log for that day is created, use that date when entering any number of food items or allergic reations you wish to record. You can then retrieve logs from any date that's been initialized by entering that date at the bottom and clicking one of the blue buttons. 
+
+## Goal:
   To track recorded data over a long time in order to trace correlations between food eaten and allergic reactions, assuming there to be a regular input of allergic reactions.
 
-  With no allergic reactions to trace, this app can serve as a means to track calories eaten or other health goals by being able to see trends on a daily, weekly or monthly basis and comparing them to personal health goals.
+  With no allergic reactions to trace, future iterations of this app can serve as a means to track calories eaten or other health goals by being able to see trends on a daily, weekly or monthly basis and comparing them to personal health goals.
 
 User Stories:
   As a user I want to list my health goals in my profile and be able to update them over time as well as determine if they're being met so tracking all this data is worth my time

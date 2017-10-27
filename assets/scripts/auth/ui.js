@@ -23,7 +23,6 @@ const changePasswordSuccess = () => {
 }
 
 const onCreateDateSuccess = (data) => {
-  console.log(data.date_master)
   // TODO This can be used to pass the date_master_id without searching database
   app.date_master = data.date_master
   app.date_master.id = data.date_master.id
