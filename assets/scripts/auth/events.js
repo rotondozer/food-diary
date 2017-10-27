@@ -41,8 +41,6 @@ const onChangePassword = function (event) {
 const onCreateDate = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  // const date = $("input[name='credentials[date-create]']").val()
-  // console.log(date)
   api.createDate(data)
     .then(ui.onCreateDateSuccess)
     .catch(ui.fail)
@@ -50,7 +48,6 @@ const onCreateDate = function (event) {
 
 const onGetDateMasters = function (event) {
   event.preventDefault()
-  console.log('onGetDateMasters in events.js')
   api.getDateMasters()
     .then(ui.getDateMastersSuccess)
     .catch(ui.fail)
@@ -58,7 +55,6 @@ const onGetDateMasters = function (event) {
 
 const onGetFoodLogs = function (event) {
   event.preventDefault()
-  console.log('onGetFoodLogs in events.js')
   api.getFoodLogs()
     .then(ui.getFoodLogsSuccess)
     .catch(ui.fail)
@@ -66,7 +62,6 @@ const onGetFoodLogs = function (event) {
 
 const onGetAllergicReactionLogs = function (event) {
   event.preventDefault()
-  console.log('onGetAllergicReactionLogs in events.js')
   api.getAllergicReactionLogs()
     .then(ui.getAllergicReactionLogsSuccess)
     .catch(ui.fail)
@@ -76,9 +71,6 @@ const onGetFlByDate = function (event) {
   event.preventDefault()
   // Get input 'yyyy-mm-dd'
   const dateFilter = $('#fl-date-input').val()
-
-  console.log('FL dateFilter === ' + dateFilter)
-  console.log('onGetFlByDate in events.js')
   // pass input to API call
   api.getFlByDate(dateFilter)
     .then(ui.getFlByDateSuccess)
@@ -88,9 +80,6 @@ const onGetFlByDate = function (event) {
 const onGetArlByDate = function (event) {
   event.preventDefault()
   const dateFilter = $('#arl-date-input').val()
-
-  console.log('ARL dateFilter === ' + dateFilter)
-  console.log('onGetFlByDate in events.js')
   // pass input to API call
   api.getArlByDate(dateFilter)
     .then(ui.getArlByDateSuccess)
@@ -100,8 +89,6 @@ const onGetArlByDate = function (event) {
 const onCreateFoodLog = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('onCreateFoodLog in event.js')
-  console.log(data) // returns food_log object
   api.createFoodLog(data)
     .then(ui.createFoodLogSuccess)
     .catch(ui.fail)
@@ -110,8 +97,6 @@ const onCreateFoodLog = function (event) {
 const onCreateAllergicReactionLog = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('onCreateAllergicReactionLog in event.js')
-  console.log(data) // returns food_log object
   api.createAllergicReactionLog(data)
     .then(ui.createAllergicReactionLogSuccess)
     .catch(ui.fail)
@@ -120,8 +105,6 @@ const onCreateAllergicReactionLog = function (event) {
 const onUpdateDate = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('onUpdateDate in events.js')
-  console.log(data)
   api.updateDate(data)
     .then(ui.updateDateSuccess)
     .catch(ui.fail)
