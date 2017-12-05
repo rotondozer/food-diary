@@ -43,7 +43,7 @@ const changePassword = function (data) {
 
 const createDate = function (data) {
   return $.ajax({
-    url: app.host + '/users/' + app.user.id + '/date_masters',
+    url: `${app.host}/users/${app.user.id}/date_masters`,
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + app.user.token
@@ -94,22 +94,21 @@ const getAllergicReactionLogs = function () {
   })
 }
 
-const getFlByDate = function (data) {
+const getFlByDate = function (date) {
   return $.ajax({
     method: 'GET',
     // url: /date_masters/:date_master_id/food_logs(.:format)
-    url: app.host + '/users/' + app.user.id + '/date_masters/' + data + '/food_logs',
+    url: `${app.host}/users/${app.user.id}/food_logs/${date}`,
     headers: {
       Authorization: 'Token token=' + app.user.token
     }
   })
 }
 
-const getArlByDate = function (data) {
+const getArlByDate = function (date) {
   return $.ajax({
     method: 'GET',
-    // url: /date_masters/:date_master_id/food_logs(.:format)
-    url: app.host + '/users/' + app.user.id + '/date_masters/' + data + '/allergic_reaction_logs',
+    url: `${app.host}/users/${app.user.id}/allergic_reaction_logs/${date}`,
     headers: {
       Authorization: 'Token token=' + app.user.token
     }
@@ -121,7 +120,7 @@ const createFoodLog = function (data) {
   const date = data.food_log.date_master_id
   return $.ajax({
     method: 'POST',
-    url: app.host + '/users/' + app.user.id + '/date_masters/' + date + '/food_logs',
+    url: `${app.host}/users/${app.user.id}/food_logs/${date}`,
     headers: {
       Authorization: 'Token token=' + app.user.token
     },
@@ -134,7 +133,7 @@ const createAllergicReactionLog = function (data) {
   const date = data.allergic_reaction_log.date_master_id
   return $.ajax({
     method: 'POST',
-    url: app.host + '/users/' + app.user.id + '/date_masters/' + date + '/allergic_reaction_logs',
+    url: `${app.host}/users/${app.user.id}/allergic_reaction_logs/${date}`,
     headers: {
       Authorization: 'Token token=' + app.user.token
     },
